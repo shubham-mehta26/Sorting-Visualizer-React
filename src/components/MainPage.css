@@ -1,0 +1,5 @@
+.mainpage{
+    width: calc(100% - 250px);
+    padding-top: 70px;
+    z-index: -2;
+}

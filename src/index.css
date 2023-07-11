@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  /* ===Colours=== */
+  --body-background: #ffff;
+  --sidebar-color: whitesmoke;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+  --border-color: black;
+  --activebg-color: #695cfe;
+  --activet-color: #fff;
+
+  /* ==== Transitions ==== */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+/* ===BODY=== */
+body{
+  background-color: var(--body-background);
+  transition: var(--tran-03);
+}
+/* ===BODY-DARK */
+body.dark{
+  --body-background: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+  --border-color: #ddd8d8f0;
+  --activebg-color: whitesmoke;
+  --activet-color: black;
+  
+  .logo img{
+      filter: invert(0.9)!important;
+  }
+  .sun{
+      opacity: 1;
+  }
+  .moon{
+      opacity: 0;
+  }
+  .contacts ul i{
+      filter: invert(1);
+  }
+  .menu button img{
+      filter:invert(1);
+  }
+  .main-body-bg{
+      filter:brightness(0.2) invert(0) blur(2px);
+  }
+}
+/* scroller */
+::-webkit-scrollbar-track
+{
+	border-radius: 15px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
 }
