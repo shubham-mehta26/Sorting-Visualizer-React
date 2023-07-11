@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function HomePage() {
+const scramble = require('@ignatiusmb/scramble');
+scramble(document.querySelector('.scamble-text')).run();
+
   return (
     <div>
       <div className="scramble-contailer">
