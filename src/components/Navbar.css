@@ -14,6 +14,7 @@
     align-items: center;
     border-bottom: 3px solid var(--border-color);
     background-color: var(--body-background);
+    z-index: 100;
 }
 .logo{
     display: flex;

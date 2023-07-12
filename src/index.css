@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto+Mono:wght@100;200;300&display=swap');
 
 *{
     margin: 0;
@@ -26,12 +26,12 @@
   --tran-05: all 0.5s ease;
 }
 /* ===BODY=== */
-body{
+.App{
   background-color: var(--body-background);
   transition: var(--tran-03);
 }
 /* ===BODY-DARK */
-body.dark{
+.App.dark{
   --body-background: #18191a;
   --sidebar-color: #242526;
   --primary-color: #3a3b3c;
@@ -57,7 +57,7 @@ body.dark{
   .menu button img{
       filter:invert(1);
   }
-  .main-body-bg{
+  .homepage-bg{
       filter:brightness(0.2) invert(0) blur(2px);
   }
 }

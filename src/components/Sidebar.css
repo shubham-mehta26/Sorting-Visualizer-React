@@ -8,7 +8,7 @@
     right: 0;
     overflow-y: scroll;
     transition: width 0.4s ease-in-out;
-    z-index: -1;
+    z-index: 99;
 }
 .sidebar.show{
     width: 250px;
@@ -131,7 +131,7 @@
     transition: var(--tran-03);
 }
 /* Dark theme */
-body.dark .switch::before{
+.App.dark .switch::before{
     left:23px;
 }
 /* Contacts */
