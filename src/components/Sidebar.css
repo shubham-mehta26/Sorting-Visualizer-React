@@ -22,11 +22,16 @@
 .nav-link{
     padding-left: 10px;
 }
-.nav-link.active a{
+button{
+    border-style: none ;
+    background: var(--sidebar-color);
+    cursor: pointer;
+}
+.nav-link.active button{
     background-color: var(--activebg-color);
 }
-.nav-link.active a .icon,
-.nav-link.active a .text {
+.nav-link.active button .icon,
+.nav-link.active button .text {
     color: var(--activet-color);
 }
 .content li{
@@ -35,7 +40,7 @@
     display: flex;
     align-items: center;
 }
-.content li a,.content li text{
+.content li button,.content li text{
     display: flex;
     align-items: center;
 }
@@ -45,12 +50,15 @@
 .content li .text{
     width: 100%;
 }
+span.text.nav-text{
+    text-align: left;
+}
 .content li .text,.content li .icon{
     margin-left: 10px;
     font-size: 18px;
     color: var(--text-color);
 }
-.content li a{
+.content li button{
     height: 90%;
     width: 100%;
     display: flex;
@@ -58,16 +66,16 @@
     border-radius: 6px;
     transition: var(--tran-03);
 }
-.content li a:hover{
+.content li button:hover{
     background-color: var(--activebg-color);
 }
-.content li a:hover .icon,
-.content li a:hover .text{
+.content li button:hover .icon,
+.content li button:hover .text{
     color: var(--activet-color);
 }
 
-.content li a:active .icon,
-.content li a:active .text{
+.content li button:active .icon,
+.content li button:active .text{
     color: var(--sidebar-color);
 }
 
@@ -139,7 +147,7 @@
     display: flex;
     justify-content: space-around;
 }
-.contacts ul li a:hover{
+.contacts ul li button:hover{
     background-color: transparent;
 }
 .contacts ul i{

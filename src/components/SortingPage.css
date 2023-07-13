@@ -1,0 +1,57 @@
+.sortingPage-main{
+    height: 100%;
+    width: 100%;
+}
+.sort-settings{
+    color: var(--text-color);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--sidebar-color);
+}
+#arraySize{
+    margin: 5px;
+}
+.array-container{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    
+}
+.array-bar-container{
+    width: 80%;
+    display: inline-block;
+    margin:  0 auto;
+    display: flex;
+}
+.array-bar{
+    background-color: #00FFFF;
+    margin-left: 2px;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16%;
+    width: 100%;
+}
+.sortingPage-main button{
+    margin: 0 10px;
+    padding: 10px 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    transition: all 0.2s ease-in-out;
+}
+.sortingPage-main button:hover{
+    background-color: var(--activebg-color);
+    color: var(--sidebar-color);
+}

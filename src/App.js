@@ -6,14 +6,15 @@ import { useState } from 'react';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [page, setPage] = useState('home');
   const toggleMode =()=>{
     setIsDarkMode(!isDarkMode);
   }
   return (
     <div className={`App ${isDarkMode ? 'dark' : ''}`}>
       <Navbar darkMode={isDarkMode} />
-      <Sidebar darkMode={isDarkMode} toggle={toggleMode} undefined="true"/>
-      <MainPage undefined="true"/>
+      <Sidebar darkMode={isDarkMode} toggle={toggleMode} undefined="true" setPage={setPage}/>
+      <MainPage page={page} />
     </div>
   );
 }

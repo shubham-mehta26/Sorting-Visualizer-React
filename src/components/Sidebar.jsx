@@ -1,11 +1,11 @@
-import React , {useState} from "react";
+import React , {useState , useRef} from "react";
 import "./Sidebar.css";
 
 
 export default function Sidebar(props) {
 
-  const [activeId, setActiveId] = useState('home');
-
+  const activeId = useRef('home');
+  const [active, setActive] = useState(activeId.current);
   const handleActive = (event) => {
     let selectedId;
     if(event.target.parentNode.tagName === "LI"){
@@ -13,8 +13,13 @@ export default function Sidebar(props) {
     }else{
       selectedId = event.target.parentNode.parentNode.id;
     }
-    setActiveId(selectedId);
+    activeId.current = selectedId;
+    setActive(activeId.current);
   }
+  const handleClick = (event) => {
+    handleActive(event);
+    props.setPage(activeId.current);
+  };
 
   return (
     <div>
@@ -23,39 +28,39 @@ export default function Sidebar(props) {
           <div className="top-content">
             <div className="side-heading">Home</div>
             <div className="content home-button">
-              <li onClick={handleActive} id="home" className={`nav-link ${activeId === 'home' ? 'active':''}`}>
-                <a href="#">
+              <li onClick={handleClick} id="home" className={`nav-link ${active === 'home' ? 'active':''}`}>
+                <button>
                   <i undefined="true" className="bx bx-home-alt-2 icon"></i>
                   <span className="text nav-text">Home</span>
-                </a>
+                </button>
               </li>
             </div>
 
             <div className="side-heading">Sorting Algorithms</div>
             <ul className="sorting-algorithms content">
-              <li onClick={handleActive} id="bubble-sort" className={`nav-link ${activeId === 'bubble-sort' ? 'active':''}`}>
-                <a href="#">
+              <li onClick={handleClick} id="bubble-sort" className={`nav-link ${active === 'bubble-sort' ? 'active':''}`}>
+                <button>
                   <i undefined="true" className="bx bx-chevron-right icon"></i>
                   <span className="text nav-text">Bubble Sort</span>
-                </a>
+                </button>
               </li>
-              <li  onClick={handleActive} id="insertion-sort" className={`nav-link ${activeId === 'insertion-sort' ? 'active':''}`}>
-                <a href="#">
+              <li  onClick={handleClick} id="insertion-sort" className={`nav-link ${active === 'insertion-sort' ? 'active':''}`}>
+                <button>
                   <i undefined="true" className="bx bx-chevron-right icon"></i>
                   <span className="text nav-text">Insertion Sort</span>
-                </a>
+                </button>
               </li>
-              <li onClick={handleActive} id="merge-sort" className={`nav-link ${activeId === 'merge-sort' ? 'active':''}`}>
-                <a href="#">
+              <li onClick={handleClick} id="merge-sort" className={`nav-link ${active === 'merge-sort' ? 'active':''}`}>
+                <button>
                   <i undefined="true" className="bx bx-chevron-right icon"></i>
                   <span className="text nav-text">Merge Sort</span>
-                </a>
+                </button>
               </li>
-              <li onClick={handleActive} id="selection-sort" className={`nav-link ${activeId === 'selection-sort' ? 'active':''}`}>
-                <a href="#">
+              <li onClick={handleClick} id="selection-sort" className={`nav-link ${active === 'selection-sort' ? 'active':''}`}>
+                <button>
                   <i undefined="true" className="bx bx-chevron-right icon"></i>
                   <span className="text nav-text">Selection Sort</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
