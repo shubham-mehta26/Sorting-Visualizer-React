@@ -3,6 +3,8 @@ import "./SortingPage.css";
 export default function SortingPage() {
   const [array, setArray] = useState([]);
   const [arraySize, setArraySize] = useState(100);
+  const [sorting, setSorting] = useState(false);
+  const pauseSorting = useRef(false);
   const maxHeight = useRef(0);
   const sortingPageMainHeight = useRef(0);
   const arrayContainerWidth = useRef(0);
@@ -11,7 +13,25 @@ export default function SortingPage() {
   const handleSliderChange = (event) => {
     setArraySize(Number(event.target.value));
   };
+  const highlightSorted = useCallback(
+    (sortedIndex) => {
+      const arrayBars = document.getElementsByClassName("array-bar");
 
+      for (let i = sortedIndex; i < array.length; i++) {
+        const barStyle = arrayBars[i].style;
+        barStyle.backgroundColor = "green";
+      }
+    },
+    [array.length]
+  );
+
+  const resetBarColors = useCallback(() => {
+    const arrayBars = document.getElementsByClassName("array-bar");
+    for (let i = 0; i < arrayBars.length; i++) {
+      const barStyle = arrayBars[i].style;
+      barStyle.backgroundColor = "turquoise";
+    }
+  }, []);
   // Generate a new random array
   const resetArray = useCallback(() => {
     const newArray = [];
@@ -22,7 +42,10 @@ export default function SortingPage() {
       newArray.push(num);
     }
     setArray(newArray);
-  }, [arraySize]);
+    setSorting(false);
+    pauseSorting.current = false;
+    resetBarColors();
+  }, [arraySize, resetBarColors]);
 
   //reset Array after changing the arraySize
   useEffect(() => {
@@ -48,18 +71,25 @@ export default function SortingPage() {
   };
 
   // Bubble Sort algorithm
-  const bubbleSort = async () => {
-    
+  const bubbleSort = useCallback(async () => {
+    setSorting(true);
+    pauseSorting.current = false;
+
     const arr = [...array];
     const n = arr.length;
 
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < n - i - 1; j++) {
+        if (pauseSorting.current) {
+          setSorting(false); // Stop the sorting process permanently
+          return;
+        }
+
         // Highlight the two compared bars in red
         highlightBars(j, j + 1, "red");
 
         // Introduce a delay to slow down the sorting process
-        await new Promise((resolve) => setTimeout(resolve, 2));
+        await new Promise((resolve) => setTimeout(resolve, 0.1));
 
         if (arr[j] > arr[j + 1]) {
           // Swap elements
@@ -78,9 +108,24 @@ export default function SortingPage() {
       // Highlight the sorted portion as green
       highlightSorted(n - i - 1);
     }
+
+    setSorting(false);
     setArray(arr);
+  }, [array, highlightSorted]);
+
+  const handleGenerateNewArray = () => {
+    if (sorting) {
+      setSorting(false);
+    } else {
+      resetArray();
+    }
   };
-  
+
+  const handlePauseSorting = () => {
+    if (sorting) {
+      pauseSorting.current = !pauseSorting.current;
+    }
+  };
 
   const highlightBars = (barOneIdx, barTwoIdx, color) => {
     const arrayBars = document.getElementsByClassName("array-bar");
@@ -98,15 +143,6 @@ export default function SortingPage() {
     const tempHeight = barOneStyle.height;
     barOneStyle.height = barTwoStyle.height;
     barTwoStyle.height = tempHeight;
-  };
-
-  const highlightSorted = (sortedIndex) => {
-    const arrayBars = document.getElementsByClassName("array-bar");
-
-    for (let i = sortedIndex; i < array.length; i++) {
-      const barStyle = arrayBars[i].style;
-      barStyle.backgroundColor = "green";
-    }
   };
 
   return (
@@ -140,8 +176,11 @@ export default function SortingPage() {
         </div>
       </div>
       <div className="controls">
-        <button onClick={resetArray} >Generate New Array</button>
-        <button onClick={bubbleSort} >Bubble Sort</button>
+        <button onClick={handleGenerateNewArray} disabled={sorting}>Generate New Array</button>
+        <button onClick={bubbleSort} disabled={sorting}>
+          Bubble Sort
+        </button>
+        <button onClick={handlePauseSorting}>Stop</button>
       </div>
     </div>
   );
