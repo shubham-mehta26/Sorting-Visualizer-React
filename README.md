@@ -50,7 +50,7 @@ Here are some screenshots of the Sorting Visualizer in action:
 The Sorting Visualizer web application was built using the following technologies and libraries:
 
 - **React**: A JavaScript library for building user interfaces.
-- **React Hooks**: The application utilizes React hooks such as `useState`, `useEffect`, and `useRef` to manage state, perform side effects, and create references to DOM elements.
+- **React Hooks**: The application utilizes React hooks such as `useState`, `useEffect`, `useCallback`, and `useRef` to manage state, perform side effects, and create references to DOM elements.
 - **React Router**: The routing functionality is implemented using React Router, allowing for navigation between different components.
 
 ## Acknowledgments
