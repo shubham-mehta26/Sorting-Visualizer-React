@@ -86,4 +86,10 @@ input[type=range]{
         width: 70%;
         margin: 5px 0;
     }
+    .sort-info{
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
 }
