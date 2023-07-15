@@ -56,7 +56,8 @@
     .main-body{
         width: 100%;
     }
-}@media (max-width:633px) {
+}
+@media (max-width:633px) {
     .navbar{
         padding: 0;
         height: 50px;

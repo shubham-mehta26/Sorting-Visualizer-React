@@ -8,6 +8,11 @@
 @media (max-width:968px) {
     .mainpage{
         width: 100%;
+        padding-top: 70px;
+    }
+}
+@media (max-width:633px) {
+    .mainpage{
         padding-top: 50px;
     }
 }

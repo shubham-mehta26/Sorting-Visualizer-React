@@ -18,6 +18,7 @@
   --border-color: black;
   --activebg-color: #695cfe;
   --activet-color: #fff;
+  --bar-color: #695cfe;
 
   /* ==== Transitions ==== */
   --tran-02: all 0.2s ease;
@@ -41,7 +42,7 @@
   --border-color: #ddd8d8f0;
   --activebg-color: whitesmoke;
   --activet-color: black;
-  
+  --bar-color: turquoise;
   .logo img{
       filter: invert(0.9)!important;
   }

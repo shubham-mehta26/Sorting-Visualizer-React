@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -14,7 +15,7 @@ function App() {
     <div className={`App ${isDarkMode ? 'dark' : ''}`}>
       <Navbar darkMode={isDarkMode} />
       <Sidebar darkMode={isDarkMode} toggle={toggleMode} undefined="true" setPage={setPage}/>
-      <MainPage page={page} />
+      <MainPage page={page} darkMode={isDarkMode}/>
     </div>
   );
 }
