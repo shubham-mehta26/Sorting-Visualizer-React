@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Sorting Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application built using **React** that allows you to visualize various sorting algorithms in action. You can observe how different algorithms manipulate and rearrange elements in real time, providing a visual representation of the sorting process.
 
-## Available Scripts
+The Sorting Visualizer is accessible through the following link: [https://sorting-visualizer26.netlify.app/](https://sorting-visualizer26.netlify.app/)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Sorting Algorithms**: The application supports several popular sorting algorithms, including Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, and Heap Sort. You can choose any algorithm and observe its execution step-by-step.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Random Array Generation**: The application generates random arrays of various sizes to demonstrate the sorting algorithms. The size of the array can be adjusted, allowing you to observe the behavior of the sorting algorithms with different input sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Speed Control**: You can control the speed at which the sorting algorithms execute. The speed slider enables you to adjust the delay between each step of the sorting process, providing a clear visualization of the algorithm's operations.
 
-### `npm test`
+- **Color-coded Visualization**: The application utilizes color-coded bars to represent the sorted elements. The height of the bars corresponds to the magnitude of the elements, while different colors help distinguish between sorted and unsorted elements.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Attractive UI and Dark Mode**: The application comes with an attractive landing page that makes the webpage attractive. Dark Mode is also added for the user's preference.
 
-### `npm run build`
+- **Algorithm Descriptions**: Each sorting algorithm comes with a brief description, explaining its logic and how it operates. This information can be accessed in the sidebar, allowing you to better understand each algorithm's behavior.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Responsive Design**: The web application is designed to be responsive and works well on various devices, including desktops, laptops, tablets, and mobile phones. You can enjoy the sorting visualizations and explore the algorithms regardless of the device you're using.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sorting Visualizer Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here are some screenshots of the Sorting Visualizer in action:
 
-### `npm run eject`
+<img src="/screenshots/screenshot1.jpg" alt="Screenshot 1" style="max-width: 50%;">
+<img src="/screenshots/screenshot2.jpg" alt="Screenshot 2" style="max-width: 50%;">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Open the Sorting Visualizer using the provided link: [https://sorting-visualizer26.netlify.app/](https://sorting-visualizer26.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Choose a sorting algorithm from the options available on the sidebar.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Adjust the size of the array using the range slider. This will determine the number of elements in the array to be sorted.
 
-## Learn More
+4. Use the speed slider to control the speed of the sorting algorithm. Move the slider to the left for slower execution and to the right for faster execution.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Click the "Generate New Array" button to create a random array for sorting.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Click the "Sort" button to start the visualization of the selected sorting algorithm. Observe the bars moving and changing color as the algorithm progresses.
 
-### Code Splitting
+7. If desired, you can stop the visualization using the "Stop" button or reset the array using the "Generate New Array" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+8. To explore the details of each sorting algorithm, click on its name in the sidebar. A brief description will appear, explaining the algorithm's logic and behavior.
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The Sorting Visualizer web application was built using the following technologies and libraries:
 
-### Making a Progressive Web App
+- **React**: A JavaScript library for building user interfaces.
+- **React Hooks**: The application utilizes React hooks such as `useState`, `useEffect`, and `useRef` to manage state, perform side effects, and create references to DOM elements.
+- **React Router**: The routing functionality is implemented using React Router, allowing for navigation between different components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+The Sorting Visualizer is based on the concepts and principles of various sorting algorithms. The project was developed for educational purposes, aiming to provide an interactive and visual representation of these algorithms.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
