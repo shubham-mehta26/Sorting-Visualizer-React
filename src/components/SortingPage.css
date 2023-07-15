@@ -1,6 +1,7 @@
 .sortingPage-main{
     height: 100%;
     width: 100%;
+    background: var(--body-background);
 }
 .sort-settings{
     color: var(--border-color);
@@ -15,8 +16,15 @@
 .sort-settings div{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 5px 20px;
     width: 40%;
+}
+.sort-settings div label{
+    width: 25%;
+}
+.sort-settings div span{
+    width: 10%
 }
 .array-container{
     display: flex;
@@ -59,6 +67,16 @@
     background-color: var(--activebg-color);
     color: var(--sidebar-color);
 }
+.sort-info{
+    height: 140px;
+    display: flex;
+    color: var(--text-color);
+    background-color: var(--body-background);
+    color: var(--text-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 @media (max-width: 633px) {
     .sort-settings{
@@ -75,6 +93,7 @@
 input[type=range]{
     margin: 0 20px;
     height: 2px;
+    width: 50%;
 }
 @media (max-width: 473px){
     .controls{
@@ -87,9 +106,8 @@ input[type=range]{
         margin: 5px 0;
     }
     .sort-info{
-        height: 170px;
+        height: 140px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
     }
 }
